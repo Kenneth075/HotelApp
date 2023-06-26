@@ -6,4 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\testimonial\" />
+    <Folder Include="wwwroot\img\team\" />
+    <Folder Include="wwwroot\img\slide\" />
+    <Folder Include="wwwroot\img\portfiolo\" />
+    <Folder Include="wwwroot\img\new\" />
+  </ItemGroup>
+
 </Project>
