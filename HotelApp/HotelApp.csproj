@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,10 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\img\testimonial\" />
-    <Folder Include="wwwroot\img\team\" />
-    <Folder Include="wwwroot\img\slide\" />
-    <Folder Include="wwwroot\img\portfiolo\" />
+    <Compile Remove="wwwroot\img\portfiolo\**" />
+    <Compile Remove="wwwroot\img\slide\**" />
+    <Compile Remove="wwwroot\img\team\**" />
+    <Compile Remove="wwwroot\img\testimonial\**" />
+    <Content Remove="wwwroot\img\portfiolo\**" />
+    <Content Remove="wwwroot\img\slide\**" />
+    <Content Remove="wwwroot\img\team\**" />
+    <Content Remove="wwwroot\img\testimonial\**" />
+    <EmbeddedResource Remove="wwwroot\img\portfiolo\**" />
+    <EmbeddedResource Remove="wwwroot\img\slide\**" />
+    <EmbeddedResource Remove="wwwroot\img\team\**" />
+    <EmbeddedResource Remove="wwwroot\img\testimonial\**" />
+    <None Remove="wwwroot\img\portfiolo\**" />
+    <None Remove="wwwroot\img\slide\**" />
+    <None Remove="wwwroot\img\team\**" />
+    <None Remove="wwwroot\img\testimonial\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\img\new\" />
   </ItemGroup>
 

@@ -1,0 +1,25 @@
+| 223232  | overlay1.png | Blue Origin Fams | Jakarta | 50    |             |          | Most Picks  |
+| 223831  | oc.png       | Good Land       | Bandung | 22     |             |          | Most Picks  |
+| 223431  | ny.png       | Stark House      | Malang  | 856    |             |          | Most Picks  |
+| 223931  | cc.png       | Vinna Vill       | Malang  | 62     |             |          | Most Picks  |
+| 563232  | gg.png       | Bobox            | Medan   | 72     |             |          | Most Picks  |
+| 343232  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 233232  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 003232  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 113232  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 663232  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 993232  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 443232  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 903232  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 344432  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 223288  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 223299  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 223277  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 223266  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 223255  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 223244  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 223233  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 226743  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 290032  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 280032  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
+| 227892  | Ochard | Badung | Jakarta | 5000 | Lovely place | Hotels with large living rooms | Popular Choice  |
