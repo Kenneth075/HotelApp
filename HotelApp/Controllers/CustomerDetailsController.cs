@@ -49,7 +49,7 @@ namespace HotelApp.Controllers
 					cmd.ExecuteNonQuery();
 				}
 				Console.WriteLine("Success reached");
-				return RedirectToAction("LogIn");
+				return RedirectToAction("LoginPage");
 			}
 
 			return View();
