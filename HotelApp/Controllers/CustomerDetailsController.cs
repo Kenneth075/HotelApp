@@ -33,12 +33,12 @@ namespace HotelApp.Controllers
 				using (SqlConnection con = new SqlConnection(connectString))
 				{
 					SqlCommand cmd = new SqlCommand();
-					cmd.CommandText = "INSERT INTO RegisteredUser(Id, FirstName, LastName, Email, Password, DateTime) " +
-									  "VALUES (@Id, @FirstName, @LastName, @Email, @Password, @DateTime)";
+					cmd.CommandText = "INSERT INTO User_Table(FirstName, LastName, Email, Password, DateTime) " +
+									  "VALUES (@FirstName, @LastName, @Email, @Password, @DateTime)";
 					cmd.Connection = con;
 
 					// Add parameters to the command
-					cmd.Parameters.AddWithValue("@Id", User.Id);
+					//cmd.Parameters.AddWithValue("@Id", User.Id);
 					cmd.Parameters.AddWithValue("@FirstName", User.FirstName);
 					cmd.Parameters.AddWithValue("@LastName", User.LastName);
 					cmd.Parameters.AddWithValue("@Email", User.Email);
