@@ -15,6 +15,7 @@ namespace HotelApp.Models
             Type = type;
             Popularity = popularity;
         }
+
         public string Id { get; set; }
         public string Name { get; set; }
         public string? City { get; set; }
