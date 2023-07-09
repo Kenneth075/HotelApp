@@ -10,6 +10,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Allproperties.txt = Allproperties.txt
 	EndProjectSection
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HotelAppDb", "HotelAppDb\HotelAppDb.sqlproj", "{90CF9E6D-AB11-490B-8FF7-8312D455E0DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{175DA8FA-E1D1-4958-97B2-82BFC74700D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{8AE79A5C-A387-4657-AF14-3EDABFEA6157}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +26,19 @@ Global
 		{A653CDB2-3536-4024-AB88-EA9007CA08BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A653CDB2-3536-4024-AB88-EA9007CA08BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A653CDB2-3536-4024-AB88-EA9007CA08BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90CF9E6D-AB11-490B-8FF7-8312D455E0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90CF9E6D-AB11-490B-8FF7-8312D455E0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90CF9E6D-AB11-490B-8FF7-8312D455E0DA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{90CF9E6D-AB11-490B-8FF7-8312D455E0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90CF9E6D-AB11-490B-8FF7-8312D455E0DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90CF9E6D-AB11-490B-8FF7-8312D455E0DA}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A653CDB2-3536-4024-AB88-EA9007CA08BE} = {175DA8FA-E1D1-4958-97B2-82BFC74700D2}
+		{90CF9E6D-AB11-490B-8FF7-8312D455E0DA} = {8AE79A5C-A387-4657-AF14-3EDABFEA6157}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C910C770-E89A-4488-A263-AD4F330F64A4}

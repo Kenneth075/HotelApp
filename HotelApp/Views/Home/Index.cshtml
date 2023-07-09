@@ -1,15 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     var mostpicks = ViewData["mostpicks"] as List<Property>;
-    var first_mostpick = ViewData["first_mostpick"] as Property;
+    var first_mostpicks = ViewData["first_mostpicks"] as Property;
+    var beautybackyard = ViewData["beautybackyard"] as List<Property>;
+    var livingroom = ViewData["livingroom"] as List<Property>;
+    var apartment = ViewData["apartment"] as List<Property>;
 }
 
 
-
-
 <!-- ======= About Section ======= -->
-
-
 <section id="about" class="about" style="margin-top:20vh">
     <div class="container">
 
@@ -83,9 +82,9 @@
         <div style="display:flex;flex-direction:row;justify-content:space-around">
             <a asp-controller="Details" asp-action="PropDetails">
                 <div style="position:relative;" data-aos="fade-in">
-                    <img src="~/img/new/@first_mostpick!.Name" class="img-fluid" alt="" width="inherit" height="inherit" style="border-radius:20px;" data-aos="fade-in">
-                    <span style="position:absolute; bottom:10px; left:10px; background-color:white; padding:5px 10px; border-radius:10px; color:black; font-weight:bold;">@first_mostpick.City,@first_mostpick.Location,Indonesia</span>
-                    <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">$@first_mostpick.Price per night</span>
+                    <img src="@first_mostpicks.ImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style="border-radius:20px;" data-aos="fade-in">
+                    <span style="position:absolute; bottom:10px; left:10px; background-color:white; padding:5px 10px; border-radius:10px; color:black; font-weight:bold;">@first_mostpicks.City,@first_mostpicks.Location,Indonesia</span>
+                    <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">$@first_mostpicks.Price per night</span>
                 </div>
             </a>
 
@@ -97,7 +96,7 @@
                 {
                     @foreach (var property in mostpicks)
                     {
-                        @if (property == first_mostpick)
+                        @if (property == first_mostpicks)
                         {
                             continue;
                         }
@@ -105,7 +104,7 @@
                         {
                             <div class="col-lg-6 col-md-6" data-aos="fade-in">
                                 <div style="position:relative;">
-                                    <img src="~/img/new/@property.Name" class="img-fluid" alt="" width="inherit" height="inherit" style="border-radius:20px;" data-aos="fade-in">
+                                    <img src="@property.ImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style="border-radius:20px;" data-aos="fade-in">
                                     <span style="position:absolute; bottom:10px; left:10px; background-color:white; padding:5px 10px; border-radius:10px; color:black; font-weight:bold;">@property.City,@property.Location, Indonesia</span>
                                     <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">$@property.Price per night</span>
                                 </div>
@@ -131,40 +130,34 @@
 
 
         <div style="display:flex;flex-direction:row;justify-content:space-between;text-align:center">
-
             <div class=" row no-gutters">
-                <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
-                    <div style="position:relative;">
-                        <img src="~/img/new/vv.png" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
-                        <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
-                    </div>
-                    <h6>Shabby Town</h6>
-                    <p>Gunung Batu, Indonesia</p>
-                </div>
-
-                <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
-                    <img src="~/img/new/yy.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                    <h6>Anganna</h6>
-                    <p>Bogor, Indonesia</p>
-                </div>
-
-                <div class="col-lg-3 col-md-6 " data-aos="fade-left" data-aos-delay="100">
-                    <img src="~/img/new/roo.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                    <h6>Seattle Rain</h6>
-                    <p>Jakarta, Indonesia</p>
-                </div>
-
-                <div class="col-lg-3 col-md-6" data-aos="fade-right" data-aos-delay="100">
-                    <img src="~/img/new/aa.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
-                    <h6>Wooden Pit</h6>
-                    <p>Wonosoba, Indonesia</p>
-                </div>
-
+                @if(mostpicks != null)
+                {
+                    foreach (var prop in beautybackyard)
+                    {
+                        if (prop.Popularity == "Popular Choice")
+                        {
+                            <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
+                                <div style="position:relative;">
+                                    <img src="@prop.ImageUrl" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
+                                    <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
+                                </div>
+                                <h6>@prop.City</h6>
+                                <p>@prop.Location, Indonesia</p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
+                                <img src="@prop.ImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                                <h6>@prop.City</h6>
+                                <p>@prop.Location, Indonesia</p>
+                            </div>
+                        }
+                    }
+                }
             </div>
-
-
         </div>
-
     </div>
 </section><!-- End Houses with beauty Backyards -->
 <!-- ======= Hotels with large living rooms ======= -->
@@ -176,42 +169,34 @@
             </div>
         </div>
 
-
         <div style="display:flex;flex-direction:row;justify-content:space-between;text-align:center">
-
             <div class=" row no-gutters">
-
-
-                <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
-                    <img src="~/img/new/ft.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                    <h6>Green Park</h6>
-                    <p>Tangarang, Indonesia</p>
-                </div>
-
-                <div class="col-lg-3 col-md-6 " data-aos="fade-left" data-aos-delay="100">
-                    <img src="~/img/new/wq.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                    <h6>Podo Wae</h6>
-                    <p>Padiun, Indonesia</p>
-                </div>
-
-                <div class="col-lg-3 col-md-6" data-aos="fade-right" data-aos-delay="100">
-                    <img src="~/img/new/po.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                    <h6>Silver Rain</h6>
-                    <p>Bandung, Indonesia</p>
-                </div>
-
-                <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
-                    <div style="position:relative;">
-                        <img src="~/img/new/jj.png" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                        <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
-                    </div>
-                    <h6>Cashville</h6>
-                    <p>Kemang, Indonesia</p>
-                </div>
-
+                @if (mostpicks != null)
+                {
+                    foreach (var prop in livingroom)
+                    {
+                        if (prop.Popularity == "Popular Choice")
+                        {
+                            <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
+                                <div style="position:relative;">
+                                    <img src="@prop.ImageUrl" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
+                                    <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
+                                </div>
+                                <h6>@prop.City</h6>
+                                <p>@prop.Location, Indonesia</p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
+                                <img src="@prop.ImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                                <h6>@prop.City</h6>
+                                <p>@prop.Location, Indonesia</p>
+                            </div>
+                        }
+                    }
+                }
             </div>
-
-
         </div>
 
     </div>
@@ -227,44 +212,35 @@
 
 
         <div style="display:flex;flex-direction:row;justify-content:space-between;text-align:center">
-
             <div class=" row no-gutters">
-
-                <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
-                    <img src="~/img/new/ds.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                    <h6>PS Wood</h6>
-                    <p>Depok, Indonesia</p>
-                </div>
-
-                <div class="col-lg-3 col-md-6 " data-aos="fade-left" data-aos-delay="100">
-                    <img src="~/img/new/dc.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                    <h6>One Five</h6>
-                    <p>Jakarta, Indonesia</p>
-                </div>
-
-
-                <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
-                    <div style="position:relative;">
-                        <img src="~/img/new/er.png" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                        <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
-                    </div>
-                    <h6>Minimal </h6>
-                    <p>Bogor, Indonesia</p>
-                </div>
-
-
-                <div class="col-lg-3 col-md-6" data-aos="fade-right" data-aos-delay="100">
-                    <img src="~/img/new/re.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                    <h6>Stays Home</h6>
-                    <p>Wonosoba, Indonesia</p>
-                </div>
-
-
+                @if (mostpicks != null)
+                {
+                    foreach (var prop in apartment)
+                    {
+                        if (prop.Popularity == "Popular Choice")
+                        {
+                            <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
+                                <div style="position:relative;">
+                                    <img src="@prop.ImageUrl" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
+                                    <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
+                                </div>
+                                <h6>@prop.City</h6>
+                                <p>@prop.Location, Indonesia</p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
+                                <img src="@prop.ImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                                <h6>@prop.City</h6>
+                                <p>@prop.Location, Indonesia</p>
+                            </div>
+                        }
+                    }
+                }
             </div>
-
-
         </div>
-
+        </div>
     </div>
 </section><!-- Apartments with Kitchen set -->
 
