@@ -1,5 +1,5 @@
 ﻿@{
-	ViewData["Title"] = "Sign Up";
+	ViewData["Title"] = "Login";
 }
 @model HotelApp.Models.CustomerDetails
 
@@ -15,7 +15,7 @@
 			<div class="col-lg-8" style="justify-content: center">
 				<div class="card-body py-5 px-md-5">
 
-					<form action="@Url.Action("LoginPage", "CustomerDetails")" method="post">
+					<form action="@Url.Action("Index", "Home")" method="post">
 						<!-- Email input -->
 						<div class="form-outline mb-4">
 							@Html.TextBoxFor(model => model.Email, new { @class = "form-control", id="form3Example1", required = "required" })

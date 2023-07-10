@@ -15,14 +15,20 @@ namespace HotelApp.Controllers
 		//
 		public IActionResult LoginPage()
 		{
-			return View();
+            return View();
 		}
+		//public IActionResult LoginPage(CustomerDetails)
+		//{
+		//	return RedirectToAction();
+		//}
 
-		//
-		public IActionResult SignUp()
+
+
+        public IActionResult SignUp()
 		{
 			return View();
 		}
+	
 
 		[HttpPost]
 		public IActionResult SignUp(CustomerDetails User)
@@ -33,7 +39,7 @@ namespace HotelApp.Controllers
 				using (SqlConnection con = new SqlConnection(connectString))
 				{
 					SqlCommand cmd = new SqlCommand();
-					cmd.CommandText = "INSERT INTO User_Table(FirstName, LastName, Email, Password, DateTime) " +
+					cmd.CommandText = "INSERT INTO RegUsersTbl(FirstName, LastName, Email, Password, DateTime) " +
 									  "VALUES (@FirstName, @LastName, @Email, @Password, @DateTime)";
 					cmd.Connection = con;
 
