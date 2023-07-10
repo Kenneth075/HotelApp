@@ -15,7 +15,7 @@ namespace HotelApp.Controllers
 		//
 		public IActionResult LoginPage()
 		{
-            return View();
+			return View();
 		}
 		//public IActionResult LoginPage(CustomerDetails)
 		//{
@@ -24,7 +24,7 @@ namespace HotelApp.Controllers
 
 
 
-        public IActionResult SignUp()
+		public IActionResult SignUp()
 		{
 			return View();
 		}
