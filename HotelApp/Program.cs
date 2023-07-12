@@ -1,11 +1,20 @@
+using HotelApp.Models;
+using HotelApp.RegUsersRepository;
 using HotelApp.Repository;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IRepository, Repository>();
 
+var connectionString = "Default";
+
+//DbContext Registration
+builder.Services.AddDbContext<HotelAppContext>(options => { options.UseSqlServer(connectionString); });
+
+builder.Services.AddScoped<IPictureDbRepository>(provider => { var dbcontext = provider.GetRequiredService<HotelAppContext>(); return new PictureDbRepository(dbcontext); });
+builder.Services.AddScoped<IRegUsersRepository>(provider => { var dbcontext = provider.GetRequiredService<HotelAppContext>(); return new RegUsersRepository(dbcontext); });
 
 var app = builder.Build();
 

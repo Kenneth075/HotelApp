@@ -1,10 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    var mostpicks = ViewData["mostpicks"] as List<Property>;
-    var first_mostpicks = ViewData["first_mostpicks"] as Property;
-    var beautybackyard = ViewData["beautybackyard"] as List<Property>;
-    var livingroom = ViewData["livingroom"] as List<Property>;
-    var apartment = ViewData["apartment"] as List<Property>;
+    var mostpicks = ViewData["mostpicks"] as List<PictureDb>;
+    var first_mostpicks = ViewData["first_mostpicks"] as PictureDb;
+    var beautybackyard = ViewData["beautybackyard"] as List<PictureDb>;
+    var livingroom = ViewData["livingroom"] as List<PictureDb>;
+    var apartment = ViewData["apartment"] as List<PictureDb>;
 }
 
 
@@ -82,9 +82,9 @@
         <div style="display:flex;flex-direction:row;justify-content:space-around">
             <a asp-controller="Details" asp-action="PropDetails">
                 <div style="position:relative;" data-aos="fade-in">
-                    <img src="@first_mostpicks.ImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style="border-radius:20px;" data-aos="fade-in">
-                    <span style="position:absolute; bottom:10px; left:10px; background-color:white; padding:5px 10px; border-radius:10px; color:black; font-weight:bold;">@first_mostpicks.City,@first_mostpicks.Location,Indonesia</span>
-                    <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">$@first_mostpicks.Price per night</span>
+                    <img src="@first_mostpicks.HotelImageUrl" class="img-fluid" alt="" width?="inherit" height?="inherit" style="border-radius:20px;" data-aos="fade-in">
+                    <span style="position:absolute; bottom:10px; left:10px; background-color:white; padding:5px 10px; border-radius:10px; color:black; font-weight:bold;">@first_mostpicks.HotelLocation,Indonesia</span>
+                    <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">$@first_mostpicks.HotelPrice per night</span>
                 </div>
             </a>
 
@@ -104,9 +104,9 @@
                         {
                             <div class="col-lg-6 col-md-6" data-aos="fade-in">
                                 <div style="position:relative;">
-                                    <img src="@property.ImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style="border-radius:20px;" data-aos="fade-in">
-                                    <span style="position:absolute; bottom:10px; left:10px; background-color:white; padding:5px 10px; border-radius:10px; color:black; font-weight:bold;">@property.City,@property.Location, Indonesia</span>
-                                    <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">$@property.Price per night</span>
+                                    <img src="@property.HotelImageUrl" class="img-fluid" alt="" width?="inherit" height?="inherit" style="border-radius:20px;" data-aos="fade-in">
+                                    <span style="position:absolute; bottom:10px; left:10px; background-color:white; padding:5px 10px; border-radius:10px; color:black; font-weight:bold;">@property.HotelLocation, Indonesia</span>
+                                    <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">$@property.HotelPrice per night</span>
                                 </div>
                             </div>
                         }
@@ -135,23 +135,23 @@
                 {
                     foreach (var prop in beautybackyard)
                     {
-                        if (prop.Popularity == "Popular Choice")
+                        if (prop.HotelPopularity == "Popular Choice")
                         {
                             <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
                                 <div style="position:relative;">
-                                    <img src="@prop.ImageUrl" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
+                                    <img src="@prop.HotelImageUrl" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
                                     <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
                                 </div>
-                                <h6>@prop.City</h6>
-                                <p>@prop.Location, Indonesia</p>
+                                <h6>@prop.HotelLocation</h6>
+                                <p>@prop.HotelLocation, Indonesia</p>
                             </div>
                         }
                         else
                         {
                             <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
-                                <img src="@prop.ImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                                <h6>@prop.City</h6>
-                                <p>@prop.Location, Indonesia</p>
+                                <img src="@prop.HotelImageUrl" class="img-fluid" alt="" width?="inherit" height?="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                                <h6>@prop.HotelLocation</h6>
+                                <p>@prop.HotelLocation, Indonesia</p>
                             </div>
                         }
                     }
@@ -175,23 +175,23 @@
                 {
                     foreach (var prop in livingroom)
                     {
-                        if (prop.Popularity == "Popular Choice")
+                        if (prop.HotelPopularity == "Popular Choice")
                         {
                             <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
                                 <div style="position:relative;">
-                                    <img src="@prop.ImageUrl" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
+                                    <img src="@prop.HotelImageUrl" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
                                     <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
                                 </div>
-                                <h6>@prop.City</h6>
-                                <p>@prop.Location, Indonesia</p>
+                                <h6>@prop.HotelLocation</h6>
+                                <p>@prop.HotelLocation, Indonesia</p>
                             </div>
                         }
                         else
                         {
                             <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
-                                <img src="@prop.ImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                                <h6>@prop.City</h6>
-                                <p>@prop.Location, Indonesia</p>
+                                <img src="@prop.HotelImageUrl" class="img-fluid" alt="" width?="inherit" height?="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                                <h6>@prop.HotelLocation</h6>
+                                <p>@prop.HotelLocation, Indonesia</p>
                             </div>
                         }
                     }
@@ -217,23 +217,23 @@
                 {
                     foreach (var prop in apartment)
                     {
-                        if (prop.Popularity == "Popular Choice")
+                        if (prop.IsPopular == "Popular Choice")
                         {
                             <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
                                 <div style="position:relative;">
-                                    <img src="@prop.ImageUrl" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
+                                    <img src="@prop.HotelImageUrl" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw" data-aos="fade-in">
                                     <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
                                 </div>
-                                <h6>@prop.City</h6>
-                                <p>@prop.Location, Indonesia</p>
+                                <h6>@prop.HotelLocation</h6>
+                                <p>@prop.HotelLocation, Indonesia</p>
                             </div>
                         }
                         else
                         {
                             <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
-                                <img src="@prop.ImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
-                                <h6>@prop.City</h6>
-                                <p>@prop.Location, Indonesia</p>
+                                <img src="@prop.HotelImageUrl" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                                <h6>@prop.HotelLocation</h6>
+                                <p>@prop.HotelLocation, Indonesia</p>
                             </div>
                         }
                     }

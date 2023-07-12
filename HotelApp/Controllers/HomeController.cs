@@ -7,20 +7,20 @@ namespace HotelApp.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly IRepository _repository;
-		public HomeController(IRepository repository)
+		private readonly IPictureDbRepository _repository;
+		public HomeController(IPictureDbRepository repository)
 		{
 		   _repository = repository;
 		}
 		
 		public IActionResult Index()
 		{
-			List<Property> Properties = _repository.GetHotels();
-			var mostpicks = Properties.Where(p => p.Popularity == "Most Picks").ToList();
+			List<PictureDb> Properties = _repository.GetHotels();
+			var mostpicks = Properties.Where(p => p.HotelPopularity == "Most Picks").ToList();
 			var first_mostpick = mostpicks.FirstOrDefault();
-			var beautybackyard = Properties.Where(p => p.Description == "beauty backyard").ToList();
-			var livingroom = Properties.Where(p => p.Description == "living room").ToList();
-			var apartment = Properties.Where(p => p.Description == "Apartment").ToList();
+			var beautybackyard = Properties.Where(p => p.HotelDescription == "beauty backyard").ToList();
+			var livingroom = Properties.Where(p => p.HotelDescription == "living room").ToList();
+			var apartment = Properties.Where(p => p.HotelDescription == "Apartment").ToList();
 			ViewData["mostpicks"] = mostpicks;
 			ViewData["first_mostpicks"] = first_mostpick;
 			ViewData["beautybackyard"] = beautybackyard;
